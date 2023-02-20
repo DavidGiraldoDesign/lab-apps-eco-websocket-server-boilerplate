@@ -1,17 +1,19 @@
-const express = require('express');
-const { Server } = require('socket.io');
+import express from 'express';
+//import { Server } from 'socket.io';
 
 const expressApp = express(); //Environment setup
+const PORT = 5050;
 
 expressApp.use(express.json()) //Middlewares
 expressApp.use('/app', express.static('public')); //Middlewares
 
-const httpServer = expressApp.listen(5050, () => { //Star the server
-    console.log(`http://localhost:5050/app`);
-})
+expressApp.listen(PORT);
+/*const httpServer = expressApp.listen(PORT, () => { //Star the server
+    console.log(`http://localhost:${PORT}/app`);
+})*/
 
-const io = new Server(httpServer, { path: '/real-time' }); //WebSocket Server (instance) initialization
+//const io = new Server(httpServer, { path: '/real-time' }); //WebSocket Server (instance) initialization
 
-io.on('connection', (socket) => { //Listening for webSocket connections
+//io.on('connection', (socket) => { //Listening for webSocket connections
     
-});
+//});

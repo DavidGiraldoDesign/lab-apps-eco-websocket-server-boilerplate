@@ -34,3 +34,5 @@ function newCursor(x, y) {
     fill(255);
     ellipse(x, y, 10, 10);
 }
+
+//Add an .on() event on the socket
